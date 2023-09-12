@@ -6,19 +6,28 @@
 //
 
 import Foundation
-class HomeViewModel: ObservableObject{
-    @Published var results: Result<MovieSearchResultsModel, CustomError>? = nil
-    func getResults() async{
-        let url = EndPoint.shared.searchMovie(with: [.search("")])
-        var result: Result<MovieSearchResultsModel, CustomError>? = await ApiClient.shared.fetchData(url: url)
-        switch result{
-        case .success(let result):
-            print(result.results?[0].release_date as Any)
-        case .failure(let error):
-            print(error.localizedDescription)
-        case .none:
-            debugPrint("")
-        }
+
+
+class HomeViewModel: ObservableObject {
+  @Published var results: [Movie] = []
+  @Published var isLoading = false
+  @Published var page = 1
+  
+  func getResults() async {
+    isLoading = true
+    let url = EndPoint.shared.discoverMovie(with: [.page(page)])
+    var result: Result<MovieSearchResultsModel, CustomError>? = await ApiClient.shared.fetchData(url: url)
+    switch result {
+    case .success(let result):
+      if let movies = result.results {
+        results.append(contentsOf: movies)
+      }
+    case .failure(let error):
+      print(error.localizedDescription)
+    case .none:
+      debugPrint("")
     }
-    
+    isLoading = false
+    page += 1
+  }
 }
