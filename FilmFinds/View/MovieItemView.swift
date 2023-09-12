@@ -12,10 +12,19 @@ struct MovieItemView: View {
     var movieTitle: String = "Loreaum ipsum"
     var movieDescription: String = "No Data"
     var imagePath: String?
+    var imageFullPath: String{
+        if let imagePath = imagePath{
+            return NetworkConstants.shared.posterImageBaseUrl + imagePath
+        }else
+        {
+            return ""
+        }
+        
+    }
     
     var body: some View {
       HStack {
-        AsyncImage(url: URL(string: imagePath ?? "")) { image in
+        AsyncImage(url: URL(string: imageFullPath)) { image in
               image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -44,7 +53,7 @@ struct MovieItemView: View {
                     .font(.system(size: 15, weight: .regular, design: .default))
                     .frame(maxHeight: 70) // Set the fixed height
                     .multilineTextAlignment(.leading)
-                    .padding(.trailing, 0)
+                    .padding(.trailing, 10)
                     .cornerRadius(10)
                 
             }

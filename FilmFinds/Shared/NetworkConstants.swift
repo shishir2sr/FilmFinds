@@ -18,5 +18,9 @@ class NetworkConstants {
     var baseURL: String {
         return "https://api.themoviedb.org/3/"
     }
+    
+    var posterImageBaseUrl : String{
+        return "https://image.tmdb.org/t/p/w500"
+    }
 }
 

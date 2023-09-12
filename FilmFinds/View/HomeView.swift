@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-struct ContentView: View {
+struct HomeView: View {
     @State private var searchText = ""
-    @State private var isScrolledUp = false
-    @State var movieList: [DummyMovie] = [dummyMovie, dummyMovie, dummyMovie2, dummyMovie2, dummyMovie2]
-    @State var originalMovieList: [DummyMovie] = [dummyMovie, dummyMovie, dummyMovie2, dummyMovie2, dummyMovie2] // Store the original movie list
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         ZStack{
@@ -28,7 +26,6 @@ struct ContentView: View {
                         .font(.system(size: 28, weight: .heavy, design: .default))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        
                 }
                 
                 HStack {
@@ -49,44 +46,44 @@ struct ContentView: View {
                 .cornerRadius(10)
                 .padding()
                 
-                List(filteredMovieList, id: \.self) { movie in
-                    MovieItemView(movieTitle: movie.name, movieDescription: movie.description, imagePath: movie.imagePath)
-                        .listRowBackground(Color(.clear))
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .padding()
+                } else {
+                    List(viewModel.results, id: \.id) { movie in
+                        MovieItemView(movieTitle: movie.title ?? "No data found", movieDescription: movie.overview ?? "Empty", imagePath: movie.poster_path)
+                            .listRowBackground(Color(.clear))
+                    }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
+                
                 Spacer()
             }
             
+        }
+        .task {
+            await viewModel.discoverMovies()
         }
     }
 
     func searchBarButtonClicked() {
         if searchText.isEmpty {
             // If search text is empty, reset to the original list
-            movieList = originalMovieList
-        } else {
-            // Filter the movie list based on the search text
-            movieList = originalMovieList.filter { movie in
-                movie.name.lowercased().contains(searchText.lowercased())
+            viewModel.results = []
+            viewModel.pageNo = 1
+            Task {
+                await viewModel.discoverMovies()
             }
-        }
-    }
-    
-    // Computed property to return the filtered movie list
-    var filteredMovieList: [DummyMovie] {
-        if searchText.isEmpty {
-            return movieList // If search text is empty, return the original list
         } else {
-            return movieList.filter { movie in
-                movie.name.lowercased().contains(searchText.lowercased())
+            // Search the movie list based on the search text
+            viewModel.results = []
+            viewModel.pageNo = 1
+            Task {
+                await viewModel.searchMovie(query: searchText)
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
 
