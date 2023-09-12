@@ -15,6 +15,7 @@
 		382257F32AAFF7BA000FFDED /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257F22AAFF7BA000FFDED /* NetworkConstants.swift */; };
 		382257F52AB001D3000FFDED /* MovieSearchResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257F42AB001D3000FFDED /* MovieSearchResultsModel.swift */; };
 		382257F72AB003AE000FFDED /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257F62AB003AE000FFDED /* Movie.swift */; };
+		382257FA2AB00D0F000FFDED /* FilmFIndsSplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 382257F92AB00D0F000FFDED /* FilmFIndsSplashScreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		382257F22AAFF7BA000FFDED /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		382257F42AB001D3000FFDED /* MovieSearchResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResultsModel.swift; sourceTree = "<group>"; };
 		382257F62AB003AE000FFDED /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		382257F82AB00C3D000FFDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		382257F92AB00D0F000FFDED /* FilmFIndsSplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilmFIndsSplashScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 		382257DC2AAFEFE6000FFDED /* FilmFinds */ = {
 			isa = PBXGroup;
 			children = (
+				382257F92AB00D0F000FFDED /* FilmFIndsSplashScreen.png */,
+				382257F82AB00C3D000FFDED /* Info.plist */,
 				382257EE2AAFF1A1000FFDED /* Shared */,
 				382257EC2AAFF02E000FFDED /* Model */,
 				382257EB2AAFF025000FFDED /* View */,
@@ -171,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382257FA2AB00D0F000FFDED /* FilmFIndsSplashScreen.png in Resources */,
 				382257E52AAFEFE9000FFDED /* Preview Assets.xcassets in Resources */,
 				382257E22AAFEFE9000FFDED /* Assets.xcassets in Resources */,
 			);
@@ -314,17 +320,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FilmFinds/Preview Content\"";
 				DEVELOPMENT_TEAM = KYZD9ZD78S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilmFinds/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FilmFinds;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = f;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -349,17 +358,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FilmFinds/Preview Content\"";
 				DEVELOPMENT_TEAM = KYZD9ZD78S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilmFinds/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FilmFinds;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = f;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
