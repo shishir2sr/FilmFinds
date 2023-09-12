@@ -50,12 +50,11 @@ struct MovieItemView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 0)
                 Text(movieDescription)
+                  
                     .font(.system(size: 15, weight: .regular, design: .default))
                     .frame(maxHeight: 70) // Set the fixed height
-                    .multilineTextAlignment(.leading)
                     .padding(.trailing, 10)
                     .cornerRadius(10)
-                
             }
         }
         .background(Color(#colorLiteral(red: 0.9, green: 1, blue: 0.9, alpha: 0.4)))

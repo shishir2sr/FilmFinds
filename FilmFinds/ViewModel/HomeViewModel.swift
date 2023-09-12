@@ -12,23 +12,30 @@ class HomeViewModel: ObservableObject {
   @Published var results: [Movie] = []
   @Published var isLoading = false
   @Published var pageNo = 1
+ @Published var errorMessage: CustomError? = nil
   
+// Get all movies from discover endpoint
   func discoverMovies() async {
       DispatchQueue.main.async {
           self.isLoading = true
       }
       
-      let url = EndPoint.shared.discoverMovie(with: [.page(pageNo)])
+      let url = URL(string: "generate error")
+//      let url = EndPoint.shared.discoverMovie(with: [.page(pageNo)])
       let result: Result<MovieSearchResultsModel, CustomError>? = await ApiClient.shared.fetchData(url: url)
       switch result {
       case .success(let result):
         if let movies = result.results {
           DispatchQueue.main.async {
+            
             self.results.append(contentsOf: movies)
           }
         }
       case .failure(let error):
-        print(error.localizedDescription)
+          DispatchQueue.main.async {
+              self.errorMessage = error
+          }
+        
       case .none:
         debugPrint("")
       }
@@ -38,9 +45,11 @@ class HomeViewModel: ObservableObject {
             
     }
       
+    // Get query results
       func searchMovie(query:String) async{
-          results = []
-          DispatchQueue.main.async {
+          
+          DispatchQueue.main.sync {
+              self.results = []
               self.isLoading = true
           }
           
@@ -56,7 +65,9 @@ class HomeViewModel: ObservableObject {
               }
             }
           case .failure(let error):
-            print(error.localizedDescription)
+              DispatchQueue.main.async {
+                  self.errorMessage = error
+              }
           case .none:
             debugPrint("")
           }
