@@ -11,6 +11,10 @@
 		382257E02AAFEFE6000FFDED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257DF2AAFEFE6000FFDED /* ContentView.swift */; };
 		382257E22AAFEFE9000FFDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382257E12AAFEFE9000FFDED /* Assets.xcassets */; };
 		382257E52AAFEFE9000FFDED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382257E42AAFEFE9000FFDED /* Preview Assets.xcassets */; };
+		382257F12AAFF6CA000FFDED /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257F02AAFF6CA000FFDED /* EndPoint.swift */; };
+		382257F32AAFF7BA000FFDED /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257F22AAFF7BA000FFDED /* NetworkConstants.swift */; };
+		382257F52AB001D3000FFDED /* MovieSearchResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257F42AB001D3000FFDED /* MovieSearchResultsModel.swift */; };
+		382257F72AB003AE000FFDED /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257F62AB003AE000FFDED /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		382257DF2AAFEFE6000FFDED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		382257E12AAFEFE9000FFDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382257E42AAFEFE9000FFDED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		382257EF2AAFF1C9000FFDED /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
+		382257F02AAFF6CA000FFDED /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		382257F22AAFF7BA000FFDED /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		382257F42AB001D3000FFDED /* MovieSearchResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResultsModel.swift; sourceTree = "<group>"; };
+		382257F62AB003AE000FFDED /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +60,10 @@
 		382257DC2AAFEFE6000FFDED /* FilmFinds */ = {
 			isa = PBXGroup;
 			children = (
-				382257DD2AAFEFE6000FFDED /* FilmFindsApp.swift */,
-				382257DF2AAFEFE6000FFDED /* ContentView.swift */,
-				382257E12AAFEFE9000FFDED /* Assets.xcassets */,
+				382257EE2AAFF1A1000FFDED /* Shared */,
+				382257EC2AAFF02E000FFDED /* Model */,
+				382257EB2AAFF025000FFDED /* View */,
+				382257ED2AAFF044000FFDED /* ViewModel */,
 				382257E32AAFEFE9000FFDED /* Preview Content */,
 			);
 			path = FilmFinds;
@@ -62,9 +72,45 @@
 		382257E32AAFEFE9000FFDED /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				382257E12AAFEFE9000FFDED /* Assets.xcassets */,
 				382257E42AAFEFE9000FFDED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		382257EB2AAFF025000FFDED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				382257DD2AAFEFE6000FFDED /* FilmFindsApp.swift */,
+				382257DF2AAFEFE6000FFDED /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		382257EC2AAFF02E000FFDED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				382257F42AB001D3000FFDED /* MovieSearchResultsModel.swift */,
+				382257F62AB003AE000FFDED /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		382257ED2AAFF044000FFDED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		382257EE2AAFF1A1000FFDED /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				382257EF2AAFF1C9000FFDED /* Configuration.xcconfig */,
+				382257F02AAFF6CA000FFDED /* EndPoint.swift */,
+				382257F22AAFF7BA000FFDED /* NetworkConstants.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382257F32AAFF7BA000FFDED /* NetworkConstants.swift in Sources */,
+				382257F12AAFF6CA000FFDED /* EndPoint.swift in Sources */,
+				382257F72AB003AE000FFDED /* Movie.swift in Sources */,
 				382257E02AAFEFE6000FFDED /* ContentView.swift in Sources */,
+				382257F52AB001D3000FFDED /* MovieSearchResultsModel.swift in Sources */,
 				382257DE2AAFEFE6000FFDED /* FilmFindsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,11 +320,14 @@
 				DEVELOPMENT_TEAM = KYZD9ZD78S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FilmFinds;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +335,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeasirarefin.FilmFinds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,11 +355,14 @@
 				DEVELOPMENT_TEAM = KYZD9ZD78S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FilmFinds;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +370,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeasirarefin.FilmFinds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

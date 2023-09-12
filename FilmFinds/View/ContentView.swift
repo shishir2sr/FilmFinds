@@ -14,6 +14,9 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+                .onAppear {
+                    print(EndPoint.shared.getMovieURL(with: [.search("marvel")])!)
+                }
         }
         .padding()
     }
