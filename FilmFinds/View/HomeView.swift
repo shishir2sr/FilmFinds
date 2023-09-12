@@ -15,12 +15,12 @@ struct HomeView: View {
             LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.8151446581, green: 0.2807564139, blue: 0.3018198311, alpha: 1)),Color(#colorLiteral(red: 0.2078385055, green: 0.2078467906, blue: 0.3428357244, alpha: 1)),Color(#colorLiteral(red: 0.2078385055, green: 0.2078467906, blue: 0.3428357244, alpha: 1)),]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                VStack{
+                HStack{
                     Image("Logo")
                         .renderingMode(.original)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 40, height: 40)
                         .cornerRadius(10)
                     Text("Film Finds")
                         .font(.system(size: 28, weight: .heavy, design: .default))
@@ -62,12 +62,34 @@ struct HomeView: View {
             }
             
         }
+        .alert(item: $viewModel.errorMessage) { errorMessage in
+                        Alert(title: Text("Error"), message: Text(errorMessage.localizedDescription), dismissButton: .default(Text("OK")))
+                    }
+        .onChange(of: searchText) { newValue in
+            // Load the data from the API based on the search text
+            viewModel.results = []
+            viewModel.pageNo = 1
+            if newValue.isEmpty {
+                // If search text is empty, reset to the original list
+                viewModel.results = []
+                viewModel.pageNo = 1
+                Task {
+                    await viewModel.discoverMovies()
+                }}else{
+                    Task {
+                        await viewModel.searchMovie(query: searchText)
+                    }}
+        }
         .task {
             await viewModel.discoverMovies()
         }
+        .onTapGesture {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
     }
-
-    func searchBarButtonClicked() {
+    
+    // MARK: Search button action
+    fileprivate func searchBarButtonClicked() {
         if searchText.isEmpty {
             // If search text is empty, reset to the original list
             viewModel.results = []
