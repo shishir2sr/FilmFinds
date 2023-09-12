@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = HomeViewModel()
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
-                .onAppear {
-                    print(EndPoint.shared.getMovieURL(with: [.search("marvel")])!)
+                .onAppear{
+                    Task {
+                        await viewModel.getResults()
+                        
+                    }
                 }
         }
         .padding()

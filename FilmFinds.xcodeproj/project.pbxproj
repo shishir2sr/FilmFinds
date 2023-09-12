@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		247B24F82AB0211000841A27 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B24F72AB0211000841A27 /* CustomError.swift */; };
+		247B24FA2AB0218700841A27 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B24F92AB0218700841A27 /* ApiClient.swift */; };
+		247B24FD2AB03D2400841A27 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B24FC2AB03D2400841A27 /* HomeViewModel.swift */; };
 		382257DE2AAFEFE6000FFDED /* FilmFindsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257DD2AAFEFE6000FFDED /* FilmFindsApp.swift */; };
 		382257E02AAFEFE6000FFDED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382257DF2AAFEFE6000FFDED /* ContentView.swift */; };
 		382257E22AAFEFE9000FFDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382257E12AAFEFE9000FFDED /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		247B24F72AB0211000841A27 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		247B24F92AB0218700841A27 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		247B24FC2AB03D2400841A27 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		382257DA2AAFEFE6000FFDED /* FilmFinds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmFinds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		382257DD2AAFEFE6000FFDED /* FilmFindsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmFindsApp.swift; sourceTree = "<group>"; };
 		382257DF2AAFEFE6000FFDED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,7 +35,7 @@
 		382257F22AAFF7BA000FFDED /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		382257F42AB001D3000FFDED /* MovieSearchResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResultsModel.swift; sourceTree = "<group>"; };
 		382257F62AB003AE000FFDED /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		382257F82AB00C3D000FFDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		382257F82AB00C3D000FFDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		382257F92AB00D0F000FFDED /* FilmFIndsSplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilmFIndsSplashScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,10 +50,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		247B24F62AB020D400841A27 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				247B24F72AB0211000841A27 /* CustomError.swift */,
+				247B24F92AB0218700841A27 /* ApiClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		247B24FB2AB03D1100841A27 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				247B24FC2AB03D2400841A27 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		382257D12AAFEFE6000FFDED = {
 			isa = PBXGroup;
 			children = (
 				382257DC2AAFEFE6000FFDED /* FilmFinds */,
+				382257F82AB00C3D000FFDED /* Info.plist */,
 				382257DB2AAFEFE6000FFDED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,12 +87,12 @@
 		382257DC2AAFEFE6000FFDED /* FilmFinds */ = {
 			isa = PBXGroup;
 			children = (
+				247B24FB2AB03D1100841A27 /* ViewModel */,
 				382257F92AB00D0F000FFDED /* FilmFIndsSplashScreen.png */,
-				382257F82AB00C3D000FFDED /* Info.plist */,
 				382257EE2AAFF1A1000FFDED /* Shared */,
+				247B24F62AB020D400841A27 /* Networking */,
 				382257EC2AAFF02E000FFDED /* Model */,
 				382257EB2AAFF025000FFDED /* View */,
-				382257ED2AAFF044000FFDED /* ViewModel */,
 				382257E32AAFEFE9000FFDED /* Preview Content */,
 			);
 			path = FilmFinds;
@@ -99,13 +123,6 @@
 				382257F62AB003AE000FFDED /* Movie.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		382257ED2AAFF044000FFDED /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		382257EE2AAFF1A1000FFDED /* Shared */ = {
@@ -189,8 +206,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				247B24F82AB0211000841A27 /* CustomError.swift in Sources */,
+				247B24FD2AB03D2400841A27 /* HomeViewModel.swift in Sources */,
 				382257F32AAFF7BA000FFDED /* NetworkConstants.swift in Sources */,
 				382257F12AAFF6CA000FFDED /* EndPoint.swift in Sources */,
+				247B24FA2AB0218700841A27 /* ApiClient.swift in Sources */,
 				382257F72AB003AE000FFDED /* Movie.swift in Sources */,
 				382257E02AAFEFE6000FFDED /* ContentView.swift in Sources */,
 				382257F52AB001D3000FFDED /* MovieSearchResultsModel.swift in Sources */,
@@ -251,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -305,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -321,10 +341,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FilmFinds/Preview Content\"";
-				DEVELOPMENT_TEAM = KYZD9ZD78S;
+				DEVELOPMENT_TEAM = PH6TSH68UW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FilmFinds/Info.plist;
@@ -342,8 +363,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yeasirarefin.FilmFinds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeasirarefin.FilmFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -362,7 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FilmFinds/Preview Content\"";
-				DEVELOPMENT_TEAM = KYZD9ZD78S;
+				DEVELOPMENT_TEAM = PH6TSH68UW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FilmFinds/Info.plist;
@@ -380,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yeasirarefin.FilmFinds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeasirarefin.FilmFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

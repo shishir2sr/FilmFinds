@@ -7,24 +7,24 @@
 
 import Foundation
 // MARK: - Result
-struct Movie {
+struct Movie:  Codable{
     var adult: Bool?
-    var backdropPath: String?
-    var genreids: [Int]?
+    var backdrop_path: String?
+    var genre_ids: [Int]?
     var id: Int?
-    var originalLanguage: OriginalLanguage?
-    var originalTitle: String?
+    var original_language: OriginalLanguage?
+    var original_title: String?
     var overview: String?
     var popularity: Double?
-    var posterPath: String?
-    var releaseDate: String?
+    var poster_path: String?
+    var release_date: String?
     var title: String?
     var video: Bool?
-    var voteAverage: Double?
-    var voteCount: Int?
+    var vote_average: Double?
+    var vote_count: Int?
 }
 
-enum OriginalLanguage: String {
+enum OriginalLanguage: String, Codable {
     case en
     case ja
 }

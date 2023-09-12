@@ -8,10 +8,10 @@
 import Foundation
 
 
-// MARK: - Welcome
-struct MovieSearchResultsModel {
+// MARK: - MovieSearchResultsModel
+struct MovieSearchResultsModel: Codable {
     var page: Int?
     var results: [Movie]?
-    var totalPages: Int?
-    var totalResults: Int?
+    var total_pages: Int?
+    var total_results: Int?
 }

@@ -17,7 +17,6 @@ class EndPoint {
     // MARK: Build diferent query parameters
     enum QueryParameter {
         case search(String)
-        
         var queryItem: URLQueryItem {
             switch self {
             case .search(let query):
@@ -43,9 +42,14 @@ class EndPoint {
          
          - Returns: A URL object for searching movies.
          */
-    func getMovieURL(with queryParameters: [QueryParameter] = []) -> URL? {
-        let endpoint = "/movie"
+    func searchMovie(with queryParameters: [QueryParameter] = []) -> URL? {
+        let endpoint = "search/movie"
         return createURL(endpoint: endpoint, queryParameters: queryParameters)
+    }
+    
+    func discoverMovie() -> URL? {
+        let endpoint = "discover/movie"
+        return createURL(endpoint: endpoint, queryParameters: [])
     }
 
 }

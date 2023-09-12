@@ -16,7 +16,7 @@ class NetworkConstants {
     }
 
     var baseURL: String {
-        return "https://api.themoviedb.org/3/search"
+        return "https://api.themoviedb.org/3/"
     }
 }
 
