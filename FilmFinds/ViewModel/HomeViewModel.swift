@@ -19,9 +19,8 @@ class HomeViewModel: ObservableObject {
       DispatchQueue.main.async {
           self.isLoading = true
       }
-      
-      let url = URL(string: "generate error")
-//      let url = EndPoint.shared.discoverMovie(with: [.page(pageNo)])
+//    let url = URL(string: "generate error")
+      let url = EndPoint.shared.discoverMovie(with: [.page(pageNo)])
       let result: Result<MovieSearchResultsModel, CustomError>? = await ApiClient.shared.fetchData(url: url)
       switch result {
       case .success(let result):

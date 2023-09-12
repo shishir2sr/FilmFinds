@@ -12,6 +12,7 @@ struct MovieItemView: View {
     var movieTitle: String = "Loreaum ipsum"
     var movieDescription: String = "No Data"
     var imagePath: String?
+    
     var imageFullPath: String{
         if let imagePath = imagePath{
             return NetworkConstants.shared.posterImageBaseUrl + imagePath
@@ -19,7 +20,6 @@ struct MovieItemView: View {
         {
             return ""
         }
-        
     }
     
     var body: some View {
@@ -62,20 +62,3 @@ struct MovieItemView: View {
         .shadow(radius: 3)
     }
 }
-
-
-
-
-//let movieList = ["SpiderMan", "SpiderMan", "SpiderMan","SpiderMan", "SpiderMan"]
-
-struct DummyMovie: Hashable{
-    let name: String
-    let description: String
-    let imagePath: String
-}
-
-let dummyMovie = DummyMovie(name: "SpiderMan", description: "Peter Parker is dissatisfied with life when he loses his job, the love of his life and his powers. Amid all the chaos, he must fight Doctor Octavius, who threatens to destroy New York City.", imagePath: "spidermanPoster")
-
-let dummyMovie2 = DummyMovie(name: "Batman", description: "Peter Parker is dissatisfied with life when he loses his job, the love of his life and his powers. Amid all the chaos, he must fight Doctor Octavius, who threatens to destroy New York City.", imagePath: "batmanMovie")
-
-var movieList: [DummyMovie] = [dummyMovie, dummyMovie, dummyMovie2, dummyMovie2, dummyMovie2]
